@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* Custom Balanz Brand Colors */
+:root {
+  --balanz-primary: #F2FE8D;
+  --balanz-bg: #212121;
+  --balanz-secondary: #2C2C2E;
+  --balanz-text: #FFFFFF;
+  --balanz-text-secondary: #B0B0B0;
+  --balanz-accent: #FF6B35;
+  --balanz-success: #4CAF50;
+  --balanz-danger: #F44336;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--balanz-bg);
+  color: var(--balanz-text);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--balanz-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--balanz-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e8f68a;
+}
