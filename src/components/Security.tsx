@@ -67,7 +67,7 @@ const Security: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-[#212121]">
+    <section id="security" className="py-20 px-4 bg-[#212121]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -104,13 +104,17 @@ const Security: React.FC = () => {
           {trustIndicators.map((indicator, index) => {
             const IconComponent = indicator.icon;
             return (
-              <div key={index} className="text-center">
+              <motion.div
+                key={index}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="text-center"
+              >
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-[#F2FE8D] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="w-8 h-8 text-[#212121]" />
                 </div>
                 <div className="text-2xl font-bold text-white mb-2">{indicator.value}</div>
                 <div className="text-sm text-[#B0B0B0]">{indicator.label}</div>
-              </div>
+              </motion.div>
             );
           })}
         </motion.div>
@@ -132,6 +136,8 @@ const Security: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="group bg-[#2C2C2E] rounded-2xl p-8 hover:bg-[#2C2C2E]/80 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/10"
               >
                 {/* Background Gradient */}
@@ -183,13 +189,17 @@ const Security: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {certifications.map((cert, index) => (
-              <div key={index} className="text-center">
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="text-center"
+              >
                 <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-[#F2FE8D] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-10 h-10 text-[#212121]" />
                 </div>
                 <div className="font-bold text-white mb-2">{cert.name}</div>
                 <div className="text-sm text-[#B0B0B0]">{cert.description}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -215,12 +225,20 @@ const Security: React.FC = () => {
               Your information is encrypted, secure, and never shared without your explicit consent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-[#F2FE8D] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-green-500 to-[#F2FE8D] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105"
+              >
                 Learn More About Security
-              </button>
-              <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-xl hover:bg-green-400 hover:text-[#212121] transition-all duration-300">
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-xl hover:bg-green-400 hover:text-[#212121] transition-all duration-300"
+              >
                 View Privacy Policy
-              </button>
+              </motion.button>
             </div>
           </div>
         </motion.div>

@@ -55,17 +55,25 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105"
+            >
               <div className="flex items-center justify-center space-x-2">
                 <Download className="w-5 h-5" />
                 <span>Download Balanz</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div>
-            </button>
+            </motion.button>
 
-            <button className="px-8 py-4 border-2 border-[#F2FE8D] text-[#F2FE8D] font-semibold rounded-xl hover:bg-[#F2FE8D] hover:text-[#212121] transition-all duration-300">
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 border-2 border-[#F2FE8D] text-[#F2FE8D] font-semibold rounded-xl hover:bg-[#F2FE8D] hover:text-[#212121] transition-all duration-300"
+            >
               See How It Works
-            </button>
+            </motion.button>
           </motion.div>
 
           {/* Stats */}
@@ -75,18 +83,18 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="grid grid-cols-3 gap-8 pt-8 border-t border-[#2C2C2E]"
           >
-            <div className="text-center">
+            <motion.div whileHover={{ y: -6, scale: 1.02 }} className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-[#F2FE8D]">50K+</div>
               <div className="text-sm text-[#B0B0B0]">Active Users</div>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div whileHover={{ y: -6, scale: 1.02 }} className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-[#F2FE8D]">₦2.5B+</div>
               <div className="text-sm text-[#B0B0B0]">Transactions Tracked</div>
-            </div>
-            <div className="text-center">
+            </motion.div>
+            <motion.div whileHover={{ y: -6, scale: 1.02 }} className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-[#F2FE8D]">4.9★</div>
               <div className="text-sm text-[#B0B0B0]">App Store Rating</div>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
 

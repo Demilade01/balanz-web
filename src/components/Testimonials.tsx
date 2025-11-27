@@ -74,7 +74,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-[#2C2C2E] to-[#212121]">
+    <section id="reviews" className="py-20 px-4 bg-gradient-to-b from-[#2C2C2E] to-[#212121]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -111,13 +111,17 @@ const Testimonials: React.FC = () => {
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
-              <div key={index} className="text-center">
+              <motion.div
+                key={index}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="text-center"
+              >
                 <div className="w-16 h-16 bg-gradient-to-br from-[#F2FE8D] to-[#FF6B35] rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="w-8 h-8 text-[#212121]" />
                 </div>
                 <div className="text-2xl font-bold text-white mb-2">{stat.value}</div>
                 <div className="text-sm text-[#B0B0B0]">{stat.label}</div>
-              </div>
+              </motion.div>
             );
           })}
         </motion.div>
@@ -137,6 +141,8 @@ const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="group bg-[#2C2C2E] rounded-2xl p-8 hover:bg-[#2C2C2E]/80 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#F2FE8D]/10"
             >
               {/* Quote Icon */}
@@ -202,12 +208,20 @@ const Testimonials: React.FC = () => {
               become the next success story in our community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105"
+              >
                 Start Your Journey
-              </button>
-              <button className="px-8 py-4 border-2 border-[#F2FE8D] text-[#F2FE8D] font-semibold rounded-xl hover:bg-[#F2FE8D] hover:text-[#212121] transition-all duration-300">
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 border-2 border-[#F2FE8D] text-[#F2FE8D] font-semibold rounded-xl hover:bg-[#F2FE8D] hover:text-[#212121] transition-all duration-300"
+              >
                 Read More Reviews
-              </button>
+              </motion.button>
             </div>
           </div>
         </motion.div>

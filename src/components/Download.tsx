@@ -30,7 +30,7 @@ const Download: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-[#212121]">
+    <section id="download" className="py-20 px-4 bg-[#212121]">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -104,22 +104,30 @@ const Download: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               {/* App Store */}
-              <button className="group flex items-center justify-center space-x-3 px-6 py-4 bg-black text-white rounded-xl hover:bg-gray-900 transition-all duration-300 transform hover:scale-105">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group flex items-center justify-center space-x-3 px-6 py-4 bg-black text-white rounded-xl hover:bg-gray-900 transition-all duration-300 transform hover:scale-105"
+              >
                 <Apple className="w-6 h-6" />
                 <div className="text-left">
                   <div className="text-xs text-gray-400">Download on the</div>
                   <div className="text-lg font-semibold">App Store</div>
                 </div>
-              </button>
+              </motion.button>
 
               {/* Google Play */}
-              <button className="group flex items-center justify-center space-x-3 px-6 py-4 bg-black text-white rounded-xl hover:bg-gray-900 transition-all duration-300 transform hover:scale-105">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group flex items-center justify-center space-x-3 px-6 py-4 bg-black text-white rounded-xl hover:bg-gray-900 transition-all duration-300 transform hover:scale-105"
+              >
                 <Play className="w-6 h-6" />
                 <div className="text-left">
                   <div className="text-xs text-gray-400">GET IT ON</div>
                   <div className="text-lg font-semibold">Google Play</div>
                 </div>
-              </button>
+              </motion.button>
             </motion.div>
 
             {/* Stats */}
@@ -133,13 +141,17 @@ const Download: React.FC = () => {
               {appStats.map((stat, index) => {
                 const IconComponent = stat.icon;
                 return (
-                  <div key={index} className="text-center">
+                  <motion.div
+                    key={index}
+                    whileHover={{ y: -8, scale: 1.03 }}
+                    className="text-center"
+                  >
                     <div className="w-12 h-12 bg-gradient-to-br from-[#F2FE8D] to-[#FF6B35] rounded-xl flex items-center justify-center mx-auto mb-2">
                       <IconComponent className="w-6 h-6 text-[#212121]" />
                     </div>
                     <div className="text-lg font-bold text-white">{stat.value}</div>
                     <div className="text-xs text-[#B0B0B0]">{stat.label}</div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </motion.div>
@@ -273,11 +285,15 @@ const Download: React.FC = () => {
               Download Balanz now and take control of your money.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
+              >
                 <DownloadIcon className="w-5 h-5" />
                 <span>Download Now</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </motion.button>
               <div className="text-[#B0B0B0] text-sm">
                 Free • No hidden fees • Cancel anytime
               </div>

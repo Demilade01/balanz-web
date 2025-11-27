@@ -72,7 +72,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-[#212121]">
+    <section id="features" className="py-20 px-4 bg-[#212121]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -108,6 +108,8 @@ const Features: React.FC = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="group relative bg-[#2C2C2E] rounded-2xl p-8 hover:bg-[#2C2C2E]/80 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#F2FE8D]/10"
               >
                 {/* Background Gradient */}
@@ -160,9 +162,13 @@ const Features: React.FC = () => {
               Join thousands of Nigerians who have already taken control of their finances with Balanz.
               Start your journey to financial freedom today.
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105">
+            <motion.button
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.96 }}
+              className="px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105"
+            >
               Get Started Free
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </div>

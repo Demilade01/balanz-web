@@ -46,7 +46,7 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-[#212121] to-[#2C2C2E]">
+    <section id="how-it-works" className="py-20 px-4 bg-gradient-to-b from-[#212121] to-[#2C2C2E]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -81,6 +81,7 @@ const HowItWorks: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.01, y: -5 }}
                 className={`flex flex-col lg:flex-row items-center gap-12 ${
                   isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
                 }`}
@@ -119,10 +120,14 @@ const HowItWorks: React.FC = () => {
 
                   {/* CTA for first step */}
                   {index === 0 && (
-                    <button className="group flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-lg transition-all duration-300">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-lg transition-all duration-300"
+                    >
                       <span>Get Started Now</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </motion.button>
                   )}
                 </div>
 
@@ -257,12 +262,20 @@ const HowItWorks: React.FC = () => {
               Start your financial transformation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-[#F2FE8D] to-[#FF6B35] text-[#212121] font-semibold rounded-xl hover:shadow-2xl hover:shadow-[#F2FE8D]/25 transition-all duration-300 transform hover:scale-105"
+              >
                 Download Now
-              </button>
-              <button className="px-8 py-4 border-2 border-[#F2FE8D] text-[#F2FE8D] font-semibold rounded-xl hover:bg-[#F2FE8D] hover:text-[#212121] transition-all duration-300">
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 border-2 border-[#F2FE8D] text-[#F2FE8D] font-semibold rounded-xl hover:bg-[#F2FE8D] hover:text-[#212121] transition-all duration-300"
+              >
                 Watch Demo
-              </button>
+              </motion.button>
             </div>
           </div>
         </motion.div>

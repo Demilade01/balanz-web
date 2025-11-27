@@ -33,12 +33,6 @@ const Footer: React.FC = () => {
       { name: "Contact Us", href: "#contact" },
       { name: "Privacy Policy", href: "#privacy" },
       { name: "Terms of Service", href: "#terms" }
-    ],
-    Resources: [
-      { name: "Documentation", href: "#docs" },
-      { name: "API", href: "#api" },
-      { name: "Developer", href: "#developer" },
-      { name: "Status", href: "#status" }
     ]
   };
 
@@ -198,7 +192,7 @@ const Footer: React.FC = () => {
           >
             {/* Copyright */}
             <div className="flex items-center space-x-4 text-[#B0B0B0] text-sm">
-              <span>© 2024 Balanz. All rights reserved.</span>
+              <span>© 2025 Balanz. All rights reserved.</span>
               <div className="flex items-center space-x-2">
                 <Heart className="w-4 h-4 text-red-500" />
                 <span>Made in Nigeria</span>
