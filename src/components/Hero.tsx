@@ -4,7 +4,7 @@ import { ArrowRight, Download } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-[#212121] via-[#2C2C2E] to-[#212121]">
+    <section className="min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-br from-[#212121] via-[#2C2C2E] to-[#212121] overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="relative"
+          className="relative overflow-hidden"
         >
           {/* Phone Mockup */}
           <div className="relative mx-auto w-80 h-[600px] bg-gradient-to-b from-[#2C2C2E] to-[#1a1a1a] rounded-[3rem] p-4 shadow-2xl">

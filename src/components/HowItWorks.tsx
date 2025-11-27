@@ -127,7 +127,7 @@ const HowItWorks: React.FC = () => {
                 </div>
 
                 {/* Visual */}
-                <div className="flex-1 relative">
+                <div className="flex-1 relative overflow-hidden">
                   <div className={`relative w-full h-80 bg-gradient-to-br ${step.color} rounded-3xl p-8 transform ${
                     isEven ? 'rotate-3' : '-rotate-3'
                   } hover:rotate-0 transition-transform duration-500`}>

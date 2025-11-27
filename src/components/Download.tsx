@@ -151,7 +151,7 @@ const Download: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative overflow-hidden"
           >
             {/* QR Code Card */}
             <motion.div
